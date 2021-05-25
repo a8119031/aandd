@@ -10,21 +10,20 @@
 
     <script>
         function runButtonPressed() {
-            //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
-            //(nとmは乱数にて決定する)
             var numbers = [];
             for (i = 0; i < 10; i++) {
                 numbers.push(i + 1);
             }
             console.log(numbers);
 
-            var n = Math.floor(Math.random() * 10);
-            var m = Math.floor(Math.random() * 10);
-
-            var x;
-            x = numbers[n];
-            numbers[n] = numbers[m]
-            numbers[m] = x;
+            for (i = 0; i < 20; i++) {
+                var n = Math.floor(Math.random() * 10);
+                var m = Math.floor(Math.random() * 10);
+                var x = numbers[n];
+                numbers[n] = numbers[m]
+                numbers[m] = x;
+                console.log(numbers);
+            }
 
             show(numbers);
         }
