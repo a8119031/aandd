@@ -10,21 +10,19 @@
 
     <script>
         function runButtonPressed() {
-            //prac3-3 10個の乱数の最大値を求める
+            //prac3-4 10個の乱数の最小値を求める
             var numbers = [];
             createRandomNumbers(numbers, 10);
             show(numbers);
-            
-            var max = 0;
+
+            var min = 10000;
             for (i = 0; i < 10; i++) {
-                if (max < numbers[i]) {
-                    max = numbers[i]
+                if (min > numbers[i]) {
+                    min = numbers[i]
                 }
             }
-            show(max);
+            show(min);
         }
-
-            //prac3-4 10個の乱数の最小値を求める
     </script>
 
 </head>
