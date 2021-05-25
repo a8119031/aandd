@@ -10,19 +10,20 @@
 
     <script>
         function runButtonPressed() {
-            //prac3-2 10個の乱数の平均を求める
+            //prac3-3 10個の乱数の最大値を求める
             var numbers = [];
             createRandomNumbers(numbers, 10);
             show(numbers);
-            var total = 0;
+            
+            var max = 0;
             for (i = 0; i < 10; i++) {
-                total = total + numbers[i];
+                if (max < numbers[i]) {
+                    max = numbers[i]
+                }
             }
-            var avg = total / 10;
-            show(avg);
+            show(max);
         }
 
-            //prac3-3 10個の乱数の最大値を求める
             //prac3-4 10個の乱数の最小値を求める
     </script>
 
