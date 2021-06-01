@@ -10,15 +10,19 @@
 
     <script>
         function runButtonPressed() {
-            //prac4-1 全ての要素に2を足す
+            //prac4-2 3以上の要素のみ抽出する
             var numbers = [];
             createRandomNumbers(numbers, 10);
             show(numbers);
 
+            var numbers2 = [];
             for (i = 0; i < 10; i ++){
-                numbers[i] = numbers[i] + 2;
+                var x = numbers[i];
+                if(x >= 3){
+                    numbers2.push(x);
+                }
             }
-            show(numbers);
+            show(numbers2);
         }
     </script>
 
