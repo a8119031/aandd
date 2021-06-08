@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createRandomNumbers(numbers, 10);
+            show(numbers);
+
+            var x;
+            var address;
+            for (i = 0; i < 9; i++) {
+                var min = 100;
+                for (j = i + 1; j < 10; j++) {
+                    if (numbers[j] < min) {
+                        min = numbers[j];
+                        address = j;
+                    }
+                }
+                if (numbers[i] > numbers[address]) {
+                    x = numbers[i];
+                    numbers[i] = numbers[address];
+                    numbers[address] = x;
+                }
+                console.log(numbers)
+            }
+            show(numbers);
+        }
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>ex5-2</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
