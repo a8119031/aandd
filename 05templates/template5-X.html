@@ -10,12 +10,26 @@
 
     <script>
         function runButtonPressed() {
-            var numbers = [];
-            createOrderedRandomNumbers(numbers, 100);
+            var numbers = [9];
+            var numbers2 = [5, 8, 13, 16, 22];
+            //createOrderedRandomNumbers(numbers, 100);
             var startTime = new Date();
-            //処理            
+            //処理 
+            show(numbers);
+            show(numbers2);
             //ここに，並び替えのプログラムを書く
-            //処理終わり
+            var x = numbers[0];
+            for (var i = 0; i < numbers2.length; i++) {
+                if (numbers2[i] > x) {
+                    //右側にシフト
+                    for (var j = numbers2.length - 1; j >= i; j--) {
+                        numbers2[j + 1] = numbers2[j];
+                    }
+                    numbers2[i] = x;
+                    break
+                }
+            }
+            show(numbers2);
             var endTime = new Date();
             var time = endTime - startTime;
             show(time + 'ミリ秒');
