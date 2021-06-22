@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var birthday = {};
+
+        function registerButtonPressed() {
+            var name = document.getElementById('tf1').value;
+            var day = document.getElementById('tf2').value;
+            birthday[name] = day;
+        }
+
+        function runButtonPressed() {
+            var searchName = document.getElementById('tf3').value;
+            var searchDay = birthday[searchName];
+            if (searchName in birthday) {
+                document.getElementById('res').innerHTML = searchDay;
+            }
+            else {
+                document.getElementById('res').innerHTML = '見つかりませんでした';
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>登録</h1>
+    名前：<input id="tf1" type="text" value="">
+    <br>
+    誕生日：<input id="tf2" type="text" value="">
+    <button onclick="registerButtonPressed()">登録!</button>
+    <h1>検索</h1>
+    名前：<input id="tf3" type="text" value="">
+    <button onclick="runButtonPressed()">検索!</button>
+    <p id='res'></p>
+
+</body>
+
+</html>
