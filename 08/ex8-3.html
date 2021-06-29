@@ -15,7 +15,7 @@
         async function runButtonPressed() {
             var students = {};
             var objects = await osql.connect('select * from Students;');
-            var keys = Object.keys(objects);
+            //var keys = Object.keys(objects);
 
             for (var i = 0; i < objects.length; i++) {
                 var object = objects[i];
