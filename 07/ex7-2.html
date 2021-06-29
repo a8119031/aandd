@@ -33,6 +33,14 @@
             var japanese2 = document.getElementById('tf5').value;
             var english2 = fruits[japanese2];
             document.getElementById('tf6').value = english2;
+            function saveButtonPressed() {
+                localStorage.setItem('ObjectX', fruits);
+            }
+
+            function loadButtonPressed() {
+                var loaded = localStorage.getItem('ObjectX');
+                console.log(loaded);
+            }
         }
 
     </script>
@@ -56,6 +64,9 @@
     <br>
     英語：<input id="tf6" type="text" value="">
     <button onclick="runButtonPressed2()">検索!</button>
+    <h1>save and load</h1>
+    <button onclick="saveButtonPressed()">save!</button>
+    <button onclick="loadButtonPressed()">load!</button>
     <p id="res"></p>
 </body>
 
