@@ -13,14 +13,18 @@
         osql.requireLogin();
 
         async function runButtonPressed() {
+            var students = {};
             var objects = await osql.connect('select * from Students;');
-            var birthday = objects[0].birthday;
-            var d = new Date(birthday);
-            show(birthday);
-            show(d);
-            show(d.getFullYear());
-            show(d.getMonth() + 1);
-            show(d.getDate());
+            var keys = Object.keys(objects);
+
+            for (var i = 0; i < objects.length; i++) {
+                var object = objects[i];
+                var name = object.name;
+                var birthday = object.birthday;
+                var d = new Date(birthday);
+                students[name] = d.getMonth() + 1 + '月' + d.getDate() + '日';
+            }
+            document.getElementById('res').innerHTML = JSON.stringify(students, null, '\t');
             //document.getElementById('res').innerHTML = birthday;
         }
 
