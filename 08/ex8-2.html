@@ -13,8 +13,25 @@
         osql.requireLogin();
 
         async function runButtonPressed() {
+            var students = [];
             var objects = await osql.connect('select * from Students;');
-            document.getElementById('res').innerHTML = JSON.stringify(objects, null, '\t');
+
+            for (var i = 0; i < objects.length; i++) {
+                var object = objects[i];
+                students.push(object.name);
+                console.log(object.name);
+            }
+
+            //var keys = Object.keys(studentsA);
+            //for (var j = 0; j < keys.length; j++) {
+                //var key = keys[j];
+                //var student = {};
+                //student.number = key;
+                //student.name = studentsA[key];
+                //console.log(student);
+                //students.push(student);
+            //}
+            document.getElementById('res').innerHTML = JSON.stringify(students, null, '\t');
         }
 
     </script>
